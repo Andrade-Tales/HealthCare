@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.ConditionVariable;
 import android.view.View;
 import android.widget.Toast;
 
@@ -30,6 +29,14 @@ public class HomeActivity extends AppCompatActivity {
                 editor.clear();
                 editor.apply();
                 startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+            }
+        });
+
+        CardView findDocotor = findViewById(R.id.cardFindDoctor);
+        findDocotor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, EspecialidadeActivity.class));
             }
         });
     }

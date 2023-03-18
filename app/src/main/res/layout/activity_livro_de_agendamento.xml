@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:fillViewport="true"
-    tools:context="com.med.healthcare.RegisterActivity">
+    tools:context=".LivroDeAgendamentoActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewLivro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="24*7 Assistência Médica"
@@ -20,25 +19,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewTituloLivro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastro"
+        android:text="Agendamento"
         android:textColor="@color/colorWhite"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLivro"
+        app:layout_constraintVertical_bias="0.042" />
 
     <EditText
-        android:id="@+id/editTextRegUsername"
+        android:id="@+id/editTextLivroNomeCompleto"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
@@ -46,7 +45,7 @@
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Usuário"
+        android:hint="Nome completo"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -56,20 +55,20 @@
         android:textColorHint="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloLivro" />
 
 
     <EditText
-        android:id="@+id/editTextRegEmail"
+        android:id="@+id/editTextLivroEndereco"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_baseline_email_24"
+        android:drawableLeft="@drawable/endereco_24"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:hint="Endereço"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -78,19 +77,18 @@
         android:textColorHint="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRegUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLivroNomeCompleto" />
 
     <EditText
-        android:id="@+id/editTextRegPassword"
+        android:id="@+id/editTextLivroNumeroDeContato"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_baseline_security_24"
+        android:drawableLeft="@drawable/contato_24"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
+        android:hint="Número de contato"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -99,19 +97,19 @@
         android:textColorHint="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRegEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLivroEndereco" />
 
     <EditText
-        android:id="@+id/editTextRegConfirmPassword"
+        android:id="@+id/editTextLivroTarifa"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_baseline_security_24"
+        android:drawableLeft="@drawable/taxa_24"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Confirmação de senha"
-        android:inputType="textPassword"
+        android:hint="Tarifa"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -120,31 +118,80 @@
         android:textColorHint="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRegPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLivroNumeroDeContato" />
 
     <Button
-        android:id="@+id/buttonRegister"
+        android:id="@+id/buttonLivroDeAnotacoes"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="152dp"
         android:background="@drawable/btn_bg"
-        android:text="Cadastrar"
+        android:text="Agendar"
         app:backgroundTint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRegConfirmPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLivroTarifa" />
+
+    <Button
+        android:id="@+id/buttonVoltar"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_bg"
+        android:text="VOLTAR"
+        app:backgroundTint="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLivroDeAnotacoes" />
 
     <TextView
-        android:id="@+id/textViewExistingUser"
+        android:id="@+id/textViewEscolhaAData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Tenho uma conta"
-        android:textColor="@color/colorWhite"
+        android:layout_marginTop="40dp"
+        android:text="Escolha a data"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLivroTarifa" />
+
+    <TextView
+        android:id="@+id/textViewEscolhaOHorario"
+        android:layout_width="112dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="44dp"
+        android:text="Escolha o horário"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLivroTarifa" />
+
+    <Button
+        android:id="@+id/buttonDataLivro"
+        style="?android:spinnerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="16/03/2023"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEscolhaAData" />
+
+    <Button
+        android:id="@+id/buttonTimeLivro"
+        style="?android:spinnerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="10:00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEscolhaOHorario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
