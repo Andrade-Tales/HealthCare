@@ -22,7 +22,7 @@ public class LivroDeAgendamentoActivity extends AppCompatActivity {
     TextView tv;
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
-    private Button dateButton, timeButton;
+    private Button dateButton, timeButton, buttonAgendar, buttonVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,10 @@ public class LivroDeAgendamentoActivity extends AppCompatActivity {
         ed2 = findViewById(R.id.editTextLivroEndereco);
         ed3 = findViewById(R.id.editTextLivroNumeroDeContato);
         ed4 = findViewById(R.id.editTextLivroTarifa);
-        dateButton = findViewById(R.id.buttonDataLivro);
-        timeButton = findViewById(R.id.buttonTimeLivro);
+        dateButton = findViewById(R.id.buttonLivroData);
+        timeButton = findViewById(R.id.buttonLivroTime);
+        buttonAgendar = findViewById(R.id.buttonLivroAgendar);
+        buttonVoltar = findViewById(R.id.buttonLivroVoltar);
 
         ed1.setKeyListener(null);
         ed2.setKeyListener(null);
@@ -53,7 +55,7 @@ public class LivroDeAgendamentoActivity extends AppCompatActivity {
         ed1.setText(nomeCompleto);
         ed2.setText(endereco);
         ed3.setText(contato);
-        ed4.setText("Tarifas: " + tarifa + "/-");
+        ed4.setText("R$: " + tarifa);
 
         // DATEPICKER
         initDatePicker();
@@ -70,6 +72,20 @@ public class LivroDeAgendamentoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 timePickerDialog.show();
+            }
+        });
+
+        buttonVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LivroDeAgendamentoActivity.this, EspecialidadeActivity.class));
+            }
+        });
+
+        buttonAgendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

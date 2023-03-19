@@ -1,22 +1,20 @@
 package com.med.healthcare;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DoctorDetailsActivity extends AppCompatActivity {
+public class DetalhesDrActivity extends AppCompatActivity {
 
-    private final String[][] doctor_details1 = {
+    private final String[][] dr_detlhes1 = {
             {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
             {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
             {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
@@ -24,7 +22,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
             {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
     };
 
-    private final String[][] doctor_details2 = {
+    private final String[][] dr_detlhes2 = {
             {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
             {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
             {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
@@ -32,7 +30,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
             {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
     };
 
-    private final String[][] doctor_details3 = {
+    private final String[][] dr_detlhes3 = {
             {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
             {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
             {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
@@ -40,7 +38,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
             {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
     };
 
-    private final String[][] doctor_details4 = {
+    private final String[][] dr_detlhes4 = {
             {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
             {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
             {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
@@ -48,7 +46,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
             {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
     };
 
-    private final String[][] doctor_details5 = {
+    private final String[][] dr_detlhes5 = {
             {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
             {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
             {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
@@ -58,71 +56,62 @@ public class DoctorDetailsActivity extends AppCompatActivity {
 
     TextView tv;
     Button btn;
-    String[][] doctor_details = {};
+    String[][] dr_detalhes = {};
     HashMap<String, String> item;
-    ArrayList list;
+    ArrayList<HashMap<String, String>> lista;
     SimpleAdapter sa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_details);
+        setContentView(R.layout.activity_dr_detalhes);
 
-        tv = findViewById(R.id.textViewDDTitle);
-        btn = findViewById(R.id.buttonDDBack);
+        tv = findViewById(R.id.textViewDDTitulo);
+        btn = findViewById(R.id.botaoDDVoltar);
 
         Intent it = getIntent();
-        String title = it.getStringExtra("title");
-        tv.setText(title);
+        String titulo = it.getStringExtra("titulo");
+        tv.setText(titulo);
 
-        if (title.compareTo("Psicólogo") == 0)
-            doctor_details = doctor_details1;
-        else if (title.compareTo("Nutricionista") == 0)
-            doctor_details = doctor_details2;
-        else if (title.compareTo("Cirurgião") == 0)
-            doctor_details = doctor_details3;
-        else if (title.compareTo("Dentista") == 0)
-            doctor_details = doctor_details4;
+        if (titulo.compareTo("Psicólogo") == 0)
+            dr_detalhes = dr_detlhes1;
+        else if (titulo.compareTo("Nutricionista") == 0)
+            dr_detalhes = dr_detlhes2;
+        else if (titulo.compareTo("Cirurgião") == 0)
+            dr_detalhes = dr_detlhes3;
+        else if (titulo.compareTo("Dentista") == 0)
+            dr_detalhes = dr_detlhes4;
         else
-            doctor_details = doctor_details5;
+            dr_detalhes = dr_detlhes5;
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DoctorDetailsActivity.this, EspecialidadeActivity.class));
-            }
-        });
+        btn.setOnClickListener(v -> startActivity(new Intent(DetalhesDrActivity.this, EspecialidadeActivity.class)));
 
-        list = new ArrayList();
-        for (int i = 0; i < doctor_details.length; i++) {
+        lista = new ArrayList<HashMap<String, String>>();
+        for (int i = 0; i < dr_detalhes.length; i++) {
             item = new HashMap<String, String>();
-            item.put("line1", doctor_details[i][0]);
-            item.put("line2", doctor_details[i][1]);
-            item.put("line3", doctor_details[i][2]);
-            item.put("line4", doctor_details[i][3]);
-            item.put("line5", "Taxas : " + doctor_details[i][4] + "/-");
-            list.add(item);
+            item.put("linha1", dr_detalhes[i][0]);
+            item.put("linha2", dr_detalhes[i][1]);
+            item.put("linha3", dr_detalhes[i][2]);
+            item.put("linha4", dr_detalhes[i][3]);
+            item.put("linha5", "Valor: " + dr_detalhes[i][4] + " R$");
+            lista.add(item);
         }
-        sa = new SimpleAdapter(this, list,
+        sa = new SimpleAdapter(this, lista,
                 R.layout.multi_lines,
-                new String[]{"line1", "line2", "line3", "line4", "line5"},
-                new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
-        ListView lst = findViewById(R.id.listViewDD);
+                new String[]{"linha1", "linha2", "linha3", "linha4", "linha5"},
+                new int[]{R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
+        ListView lst = findViewById(R.id.listaViewDD);
         lst.setAdapter(sa);
 
-        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent it = new Intent(DoctorDetailsActivity.this, LivroDeAgendamentoActivity.class);
-                it.putExtra("text1", title);
-                it.putExtra("text2", doctor_details[i][0]);
-                it.putExtra("text3", doctor_details[i][1]);
-                it.putExtra("text4", doctor_details[i][3]);
-                it.putExtra("text5", doctor_details[i][4]);
-                startActivity(it);
-            }
-
+        lst.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent it1 = new Intent(DetalhesDrActivity.this, LivroDeAgendamentoActivity.class);
+            it1.putExtra("text1", titulo);
+            it1.putExtra("text2", dr_detalhes[i][0]);
+            it1.putExtra("text3", dr_detalhes[i][1]);
+            it1.putExtra("text4", dr_detalhes[i][3]);
+            it1.putExtra("text5", dr_detalhes[i][4]);
+            startActivity(it1);
         });
     }
 }

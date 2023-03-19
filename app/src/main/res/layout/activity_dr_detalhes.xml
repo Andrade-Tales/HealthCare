@@ -5,43 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".DoctorDetailsActivity">
+    tools:context=".DetalhesDrActivity">
 
     <TextView
-        android:id="@+id/textViewDDName"
+        android:id="@+id/textViewDDTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="12dp"
-        android:text="27 * 7 ASSISTÊNCIA MÉDICA"
-        android:textColor="@color/teal_200"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewDDTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginBottom="660dp"
         android:text="Default Text"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:flow_verticalBias="0.01999998"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDDName"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
-        android:id="@+id/listViewDD"
+        android:id="@+id/listaViewDD"
         android:layout_width="350dp"
         android:layout_height="500dp"
         android:layout_margin="10dp"
@@ -52,19 +33,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDDTitle"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDDTitulo"
+        app:layout_constraintVertical_bias="0.188" />
 
     <Button
-        android:id="@+id/buttonDDBack"
+        android:id="@+id/botaoDDVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="@color/teal_700"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_bg"
+        app:backgroundTint="@color/teal_700"
         android:text="VOLTAR"
         app:flow_verticalBias="0.69"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent" />
 
 

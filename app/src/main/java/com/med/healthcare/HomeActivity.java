@@ -1,14 +1,13 @@
 package com.med.healthcare;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -21,23 +20,18 @@ public class HomeActivity extends AppCompatActivity {
         String username = sharedPreferences.getString("username", "").toString();
         Toast.makeText(getApplicationContext(), "Olá!" + username, Toast.LENGTH_SHORT).show();
 
-        CardView exit = findViewById(R.id.cardExit);
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.clear();
-                editor.apply();
-                startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-            }
+        CardView exit = findViewById(R.id.cardHomeSair);
+        exit.setOnClickListener(view -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
         });
 
-        CardView findDocotor = findViewById(R.id.cardFindDoctor);
-        findDocotor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, EspecialidadeActivity.class));
-            }
-        });
+        CardView especialidade = findViewById(R.id.cardHomeEspecialidade);
+        especialidade.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, EspecialidadeActivity.class)));
+
+        CardView labTest = findViewById(R.id.cardHomeLabTest);
+       labTest.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, LabTestActivity.class)));
     }
 }

@@ -8,21 +8,7 @@
     tools:context=".EspecialidadeActivity">
 
     <TextView
-        android:id="@+id/titleEspecialidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp"
-        android:text="27 * 7 Assistência Médica"
-        android:textColor="@color/teal_200"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/titleEncontrarEspecialidade"
+        android:id="@+id/tituloEncontrarEspecialidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -38,8 +24,11 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/titleEncontrarEspecialidade"
-        android:layout_margin="20dp"
+        android:layout_below="@id/tituloEncontrarEspecialidade"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:columnCount="2"
         android:rowCount="3">
 
