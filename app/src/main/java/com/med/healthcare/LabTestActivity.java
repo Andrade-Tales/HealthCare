@@ -82,13 +82,20 @@ public class LabTestActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent it = new Intent(LabTestActivity.this, LabTestActivity.class);
+                Intent it = new Intent(LabTestActivity.this, LabTestDetalhesActivity.class);
                 it.putExtra("text1", pacotes[i][0]);
                 it.putExtra("text2", detalhes_pacote[i]);
                 it.putExtra("text3", pacotes[i][4]);
                 startActivity(it);
             }
         });
+
+//        btnCarrinho.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(LabTestActivity.this, CartLabActivity.class));
+//            }
+//        });
     }
 
 }

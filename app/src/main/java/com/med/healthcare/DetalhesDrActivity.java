@@ -2,6 +2,8 @@ package com.med.healthcare;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -14,45 +16,15 @@ import java.util.HashMap;
 
 public class DetalhesDrActivity extends AppCompatActivity {
 
-    private final String[][] dr_detlhes1 = {
-            {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
-            {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
-            {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
-            {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"},
-            {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
-    };
+    private final String[][] dr_detlhes1 = {{"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"}, {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"}, {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"}, {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"}, {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}};
 
-    private final String[][] dr_detlhes2 = {
-            {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
-            {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
-            {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
-            {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"},
-            {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
-    };
+    private final String[][] dr_detlhes2 = {{"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"}, {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"}, {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"}, {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"}, {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}};
 
-    private final String[][] dr_detlhes3 = {
-            {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
-            {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
-            {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
-            {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"},
-            {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
-    };
+    private final String[][] dr_detlhes3 = {{"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"}, {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"}, {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"}, {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"}, {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}};
 
-    private final String[][] dr_detlhes4 = {
-            {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
-            {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
-            {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
-            {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"},
-            {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
-    };
+    private final String[][] dr_detlhes4 = {{"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"}, {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"}, {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"}, {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"}, {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}};
 
-    private final String[][] dr_detlhes5 = {
-            {"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"},
-            {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"},
-            {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"},
-            {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"},
-            {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}
-    };
+    private final String[][] dr_detlhes5 = {{"Dr : André Santos", "Atende : Hospital Estadual Mário Covas", "Exp: 5 anos", "Cel: 9898989898", "600"}, {"Dr : Maria Fernandes", "Atende : Hospital Geral de Pirajussara", "Exp: 15 anos", "Cel: 7898989898", "900"}, {"Dr : Augusto Almeida", "Atende : Hospital Regional de Jundiaí", "Exp: 8 anos", "Cel: 8898989898", "300"}, {"Dr : Elisa Duarte", "Atende : Hospital Regional de São José dos Campos", "Exp: 6 anos", "Cel: 9898000000", "500"}, {"Dr : Silvia de Fátima", "Atende : Hospital Regional do Sertão Central", "Exp: 7 anos", "Cel: 9898989898", "800"}};
 
     TextView tv;
     Button btn;
@@ -73,16 +45,11 @@ public class DetalhesDrActivity extends AppCompatActivity {
         String titulo = it.getStringExtra("titulo");
         tv.setText(titulo);
 
-        if (titulo.compareTo("Psicólogo") == 0)
-            dr_detalhes = dr_detlhes1;
-        else if (titulo.compareTo("Nutricionista") == 0)
-            dr_detalhes = dr_detlhes2;
-        else if (titulo.compareTo("Cirurgião") == 0)
-            dr_detalhes = dr_detlhes3;
-        else if (titulo.compareTo("Dentista") == 0)
-            dr_detalhes = dr_detlhes4;
-        else
-            dr_detalhes = dr_detlhes5;
+        if (titulo.compareTo("Psicólogo") == 0) dr_detalhes = dr_detlhes1;
+        else if (titulo.compareTo("Nutricionista") == 0) dr_detalhes = dr_detlhes2;
+        else if (titulo.compareTo("Cirurgião") == 0) dr_detalhes = dr_detlhes3;
+        else if (titulo.compareTo("Dentista") == 0) dr_detalhes = dr_detlhes4;
+        else dr_detalhes = dr_detlhes5;
 
 
         btn.setOnClickListener(v -> startActivity(new Intent(DetalhesDrActivity.this, EspecialidadeActivity.class)));
@@ -97,21 +64,21 @@ public class DetalhesDrActivity extends AppCompatActivity {
             item.put("linha5", "Valor: " + dr_detalhes[i][4] + " R$");
             lista.add(item);
         }
-        sa = new SimpleAdapter(this, lista,
-                R.layout.multi_lines,
-                new String[]{"linha1", "linha2", "linha3", "linha4", "linha5"},
-                new int[]{R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
+        sa = new SimpleAdapter(this, lista, R.layout.multi_lines, new String[]{"linha1", "linha2", "linha3", "linha4", "linha5"}, new int[]{R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
         ListView lst = findViewById(R.id.listaViewDD);
         lst.setAdapter(sa);
 
-        lst.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent it1 = new Intent(DetalhesDrActivity.this, LivroDeAgendamentoActivity.class);
-            it1.putExtra("text1", titulo);
-            it1.putExtra("text2", dr_detalhes[i][0]);
-            it1.putExtra("text3", dr_detalhes[i][1]);
-            it1.putExtra("text4", dr_detalhes[i][3]);
-            it1.putExtra("text5", dr_detalhes[i][4]);
-            startActivity(it1);
+        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent it = new Intent(DetalhesDrActivity.this, LivroDeAgendamentoActivity.class);
+                it.putExtra("text1", titulo);
+                it.putExtra("text2", dr_detalhes[i][0]);
+                it.putExtra("text3", dr_detalhes[i][1]);
+                it.putExtra("text4", dr_detalhes[i][3]);
+                it.putExtra("text5", dr_detalhes[i][4]);
+                startActivity(it);
+            }
         });
     }
 }

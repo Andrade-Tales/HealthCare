@@ -6,7 +6,7 @@
 4. Medicamento: mostra a lista de medicamentos, adiciona ao carrinho, faz o pedido.
 5. Encontre um médico: procure um médico especialista, marque uma consulta.
 6. Artigos de saúde: informações do artigo.
-7.Detalhes do pedido: informações do pedido.
-8.Sair.
+7. Detalhes do pedido: informações do pedido.
+8. Sair.
 
 **Em Desenvolvimento!**
