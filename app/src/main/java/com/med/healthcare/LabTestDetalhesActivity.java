@@ -37,30 +37,22 @@ public class LabTestDetalhesActivity extends AppCompatActivity {
         edDetalhes.setText(intent.getStringExtra("text2"));
         tvLTDTotal.setText("Total: " + intent.getStringExtra("text3") + " R$");
 
-        botaoLTDVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        botaoLTDVoltar.setOnClickListener(view -> startActivity(new Intent(LabTestDetalhesActivity.this, LabTestActivity.class)));
+
+        botaoLTDCarrinho.setOnClickListener(view -> {
+            SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+            String username = sharedPreferences.getString("username", "").toString();
+            String product = tvLTDNomePacote.getText().toString();
+            float price = Float.parseFloat(intent.getStringExtra("text3").toString());
+
+            Database db = new Database(getApplicationContext(), "healthcare", null, 1);
+
+            if (db.checkCart(username, product) == 1) {
+                Toast.makeText(getApplicationContext(), "Produto já adicionado!", Toast.LENGTH_SHORT).show();
+            } else {
+                db.addCart(username, product, price, "lab");
+                Toast.makeText(getApplicationContext(), "Teste inserido no carrinho!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(LabTestDetalhesActivity.this, LabTestActivity.class));
-            }
-        });
-
-        botaoLTDCarrinho.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
-                String username = sharedPreferences.getString("username", "").toString();
-                String product = tvLTDNomePacote.getText().toString();
-                float price = Float.parseFloat(intent.getStringExtra("text3").toString());
-
-                Database db = new Database(getApplicationContext(), "healthcare", null, 1);
-
-                if (db.checkCart(username, product) == 1) {
-                    Toast.makeText(getApplicationContext(), "Produto já adicionado!", Toast.LENGTH_SHORT).show();
-                } else {
-                    db.addCart(username, product, price, "lab");
-                    Toast.makeText(getApplicationContext(), "Registro já inserido no carrinho!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LabTestDetalhesActivity.this, LabTestActivity.class));
-                }
             }
         });
     }

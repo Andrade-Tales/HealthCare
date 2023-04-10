@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@drawable/btn_bg"
-        android:text="Carrinho"
+        android:text="Add"
         app:backgroundTint="@color/teal_700"
         app:flow_verticalBias="0.69"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +32,10 @@ public class HomeActivity extends AppCompatActivity {
         CardView especialidade = findViewById(R.id.cardHomeEspecialidade);
         especialidade.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, EspecialidadeActivity.class)));
 
-        CardView labTest = findViewById(R.id.cardHomeLabTest);
-       labTest.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, LabTestActivity.class)));
+        CardView testeDeLaboratorio = findViewById(R.id.cardHomeLabTest);
+        testeDeLaboratorio.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, LabTestActivity.class)));
+
+        CardView outrosDetalhes = findViewById(R.id.cardHomeOutrosDetalhes);
+        outrosDetalhes.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, OutrosDetalhesActivity.class)));
     }
 }

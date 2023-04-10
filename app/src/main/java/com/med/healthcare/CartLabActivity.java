@@ -53,7 +53,7 @@ public class CartLabActivity extends AppCompatActivity {
 
         float totalAmount = 0;
         ArrayList dbData = db.getCartData(username, "lab");
-        Toast.makeText(getApplicationContext(), "" + dbData, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "" + dbData, Toast.LENGTH_LONG).show();
 
         packages = new String[dbData.size()][];
         for (int i = 0; i < packages.length; i++) {
@@ -75,59 +75,38 @@ public class CartLabActivity extends AppCompatActivity {
             item = new HashMap<String, String>();
             item.put("linha1", packages[i][0]);
             item.put("linha2", packages[i][1]);
-            item.put("linha3", packages[1][2]);
-            item.put("linha4", packages[1][3]);
-            item.put("linha5", packages[1][4]);
+            item.put("linha3", packages[i][2]);
+            item.put("linha4", packages[i][3]);
+            item.put("linha5", packages[i][4]);
             lista.add(item);
         }
 
         sa = new SimpleAdapter(this, lista, R.layout.multi_lines, new String[]{"linha1", "linha2", "linha3", "linha4", "linha5"}, new int[]{R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
         lst.setAdapter(sa);
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CartLabActivity.this, LabTestActivity.class));
-            }
-        });
+        btnBack.setOnClickListener(view -> startActivity(new Intent(CartLabActivity.this, LabTestActivity.class)));
 
-        btnCheckout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(CartLabActivity.this, LabTestBookActivity.class);
-                it.putExtra("preço", tvTotal.getText());
-                it.putExtra("data", dateButton.getText());
-                it.putExtra("tempo", timeButton.getText());
-                startActivity(it);
-            }
+        btnCheckout.setOnClickListener(view -> {
+            Intent it = new Intent(CartLabActivity.this, LabTestBookActivity.class);
+            it.putExtra("preço", tvTotal.getText());
+            it.putExtra("data", dateButton.getText());
+            it.putExtra("tempo", timeButton.getText());
+            startActivity(it);
         });
 
         // DATEPICKER
         initDatePicker();
-        dateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                datePickerDialog.show();
-            }
-        });
+        dateButton.setOnClickListener(view -> datePickerDialog.show());
 
         // TIMEPICKER
-        initTimePIcker();
-        timeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                timePickerDialog.show();
-            }
-        });
+        initTimePicker();
+        timeButton.setOnClickListener(view -> timePickerDialog.show());
     }
 
     private void initDatePicker() {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                i1 = i1 + 1;
-                dateButton.setText(i2 + "/" + i1 + "/" + i);
-            }
+        DatePickerDialog.OnDateSetListener dateSetListener = (datePicker, i, i1, i2) -> {
+            i1 = i1 + 1;
+            dateButton.setText(i2 + "/" + i1 + "/" + i);
         };
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
@@ -139,14 +118,9 @@ public class CartLabActivity extends AppCompatActivity {
         datePickerDialog.getDatePicker().setMinDate(cal.getTimeInMillis() + 86400000);
     }
 
-    private void initTimePIcker() {
+    private void initTimePicker() {
 
-        TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker timePicker, int i, int i1) {
-                timeButton.setText(i + ":" + i1);
-            }
-        };
+        TimePickerDialog.OnTimeSetListener timeSetListener = (timePicker, i, i1) -> timeButton.setText(i + ":" + i1);
 
         Calendar cal = Calendar.getInstance();
         int hrs = cal.get(Calendar.HOUR);
