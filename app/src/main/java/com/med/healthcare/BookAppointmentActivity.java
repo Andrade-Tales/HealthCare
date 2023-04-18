@@ -5,18 +5,16 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
-public class LivroDeAgendamentoActivity extends AppCompatActivity {
+public class BookAppointmentActivity extends AppCompatActivity {
 
     EditText ed1, ed2, ed3, ed4;
     TextView tv;
@@ -27,7 +25,7 @@ public class LivroDeAgendamentoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_livro_de_agendamento);
+        setContentView(R.layout.activity_book_appointment);
 
         tv = findViewById(R.id.textViewLivro);
         ed1 = findViewById(R.id.editTextLivroNomeCompleto);
@@ -59,45 +57,21 @@ public class LivroDeAgendamentoActivity extends AppCompatActivity {
 
         // DATEPICKER
         initDatePicker();
-        dateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                datePickerDialog.show();
-            }
-        });
+        dateButton.setOnClickListener(v -> datePickerDialog.show());
 
         //TIMEPICKER
         initTimePicker();
-        timeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                timePickerDialog.show();
-            }
-        });
+        timeButton.setOnClickListener(v -> timePickerDialog.show());
 
-        buttonVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LivroDeAgendamentoActivity.this, EspecialidadeActivity.class));
-            }
-        });
+        buttonVoltar.setOnClickListener(v -> startActivity(new Intent(BookAppointmentActivity.this, FindDoctorActivity.class)));
 
-        buttonAgendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
+        buttonAgendar.setOnClickListener(v -> startActivity(new Intent(BookAppointmentActivity.this, HomeActivity.class)));
     }
 
     private void initDatePicker() {
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int i, int i1, int i2) {
-                i1 = i1 + 1;
-                dateButton.setText(i2 + "/" + i1 + "/" + i);
-            }
+        DatePickerDialog.OnDateSetListener dateSetListener = (view, i, i1, i2) -> {
+            i1 = i1 + 1;
+            dateButton.setText(i2 + "/" + i1 + "/" + i);
         };
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
@@ -109,12 +83,7 @@ public class LivroDeAgendamentoActivity extends AppCompatActivity {
     }
 
     private void initTimePicker() {
-        TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker timePicker, int i, int i1) {
-                timeButton.setText(i + ":" + i1);
-            }
-        };
+        TimePickerDialog.OnTimeSetListener timeSetListener = (timePicker, i, i1) -> timeButton.setText(i + ":" + i1);
 
         Calendar cal = Calendar.getInstance();
         int hrs = cal.get(Calendar.HOUR);

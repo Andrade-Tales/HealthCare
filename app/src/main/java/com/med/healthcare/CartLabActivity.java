@@ -9,14 +9,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -25,7 +21,7 @@ import java.util.HashMap;
 public class CartLabActivity extends AppCompatActivity {
 
     HashMap<String, String> item;
-    ArrayList lista;
+    ArrayList<HashMap<String, String>> list;
     SimpleAdapter sa;
     TextView tvTotal;
     ListView lst;
@@ -70,7 +66,7 @@ public class CartLabActivity extends AppCompatActivity {
 
         tvTotal.setText("Total : " + totalAmount);
 
-        lista = new ArrayList();
+        list = new ArrayList<>();
         for (int i = 0; i < packages.length; i++) {
             item = new HashMap<String, String>();
             item.put("linha1", packages[i][0]);
@@ -78,19 +74,19 @@ public class CartLabActivity extends AppCompatActivity {
             item.put("linha3", packages[i][2]);
             item.put("linha4", packages[i][3]);
             item.put("linha5", packages[i][4]);
-            lista.add(item);
+            list.add(item);
         }
 
-        sa = new SimpleAdapter(this, lista, R.layout.multi_lines, new String[]{"linha1", "linha2", "linha3", "linha4", "linha5"}, new int[]{R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
+        sa = new SimpleAdapter(this, list, R.layout.multi_lines, new String[]{"linha1", "linha2", "linha3", "linha4", "linha5"}, new int[]{R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
         lst.setAdapter(sa);
 
         btnBack.setOnClickListener(view -> startActivity(new Intent(CartLabActivity.this, LabTestActivity.class)));
 
         btnCheckout.setOnClickListener(view -> {
             Intent it = new Intent(CartLabActivity.this, LabTestBookActivity.class);
-            it.putExtra("preço", tvTotal.getText());
-            it.putExtra("data", dateButton.getText());
-            it.putExtra("tempo", timeButton.getText());
+            it.putExtra("price", tvTotal.getText());
+            it.putExtra("date", dateButton.getText());
+            it.putExtra("time", timeButton.getText());
             startActivity(it);
         });
 

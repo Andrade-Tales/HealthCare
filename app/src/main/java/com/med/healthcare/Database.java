@@ -11,8 +11,8 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class Database extends SQLiteOpenHelper {
-    public Database(@Nullable Context context, @Nullable String nome, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, nome, factory, version);
+    public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
 
     @Override
@@ -47,7 +47,6 @@ public class Database extends SQLiteOpenHelper {
         String str[] = new String[2];
         str[0] = username;
         str[1] = password;
-
 
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("select * from users where username=? and password=?", str);
@@ -109,11 +108,11 @@ public class Database extends SQLiteOpenHelper {
         return arr;
     }
 
-    public void addOrder(String username, String fullname, String adress, String contact, int pincode, String date, String time, float price, String otype) {
+    public void addOrder(String username, String fullname, String address, String contact, int pincode, String date, String time, float price, String otype) {
         ContentValues cv = new ContentValues();
         cv.put("username", username);
         cv.put("fullname", fullname);
-        cv.put("adress", adress);
+        cv.put("address", address);
         cv.put("contact", contact);
         cv.put("pincode", pincode);
         cv.put("date", date);

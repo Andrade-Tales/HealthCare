@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back2"
-    tools:context=".LabTestDetalhesActivity">
+    tools:context=".LabTestDetailsActivity">
 
     <TextView
         android:id="@+id/textViewLTDNomePacote"
@@ -23,11 +23,13 @@
         app:layout_constraintVertical_bias="0.077" />
 
     <EditText
-        android:id="@+id/editTextLTDDetalhes"
-        android:layout_width="380dp"
-        android:layout_height="500dp"
+        android:id="@+id/editTextLTDMultiline"
+        android:layout_width="390dp"
+        android:layout_height="450dp"
         android:layout_margin="10dp"
         android:ems="10"
+        android:editable="false"
+        android:inputType="textMultiLine"
         android:gravity="start|top"
         android:padding="10dp"
         android:text="Hi \nHello"
@@ -83,6 +85,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLTDDetalhes" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLTDMultiline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

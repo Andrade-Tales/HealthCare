@@ -28,36 +28,28 @@ public class RegisterActivity extends AppCompatActivity {
         btn = findViewById(R.id.buttonRegister);
         tv = findViewById(R.id.textViewExistingUser);
 
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        tv.setOnClickListener(v -> startActivity(new Intent(RegisterActivity.this, LoginActivity.class)));
+
+        btn.setOnClickListener(v -> {
+            String username = edUsername.getText().toString();
+            String email = edEmail.getText().toString();
+            String password = edPassword.getText().toString();
+            String confirm = edConfirm.getText().toString();
+            Database db = new Database(getApplicationContext(), "healthcare", null, 1);
+            if (username.length() == 0 || email.length() == 0 || password.length() == 0 || confirm.length() == 0) {
+                Toast.makeText(getApplicationContext(), "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show();
             }
-        });
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String username = edUsername.getText().toString();
-                String email = edEmail.getText().toString();
-                String password = edPassword.getText().toString();
-                String confirm = edConfirm.getText().toString();
-                Database db = new Database(getApplicationContext(), "healthcare", null, 1);
-                if (username.length() == 0 || email.length() == 0 || password.length() == 0 || confirm.length() == 0) {
-                    Toast.makeText(getApplicationContext(), "Por favor, preencha todos os detalhes", Toast.LENGTH_SHORT).show();
-                } else {
-                    if (password.compareTo(confirm) == 0) {
-                        if (isValid(password)) {
-                            db.register(username, email, password);
-                            Toast.makeText(getApplicationContext(), "Registro inserido", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-
-                        } else {
-                            Toast.makeText(getApplicationContext(), "A senha deve conter no máximo 8 caracteres, contendo letra, dígito e símbolo especial", Toast.LENGTH_LONG).show();
-                        }
+            else {
+                if (password.compareTo(confirm) == 0) {
+                    if (isValid(password)) {
+                        db.register(username, email, password);
+                        Toast.makeText(getApplicationContext(), "Registro inserido", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                     } else {
-                        Toast.makeText(getApplicationContext(), "A senha e a confirmação não correspondem", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "A senha deve conter no máximo 8 caracteres, contendo letra, dígito e símbolo especial", Toast.LENGTH_LONG).show();
                     }
+                } else {
+                    Toast.makeText(getApplicationContext(), "A senha e a confirmação não correspondem", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".EspecialidadeActivity">
+    tools:context=".FindDoctorActivity">
 
     <TextView
-        android:id="@+id/tituloEncontrarEspecialidade"
+        android:id="@+id/titleFindDoctor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -24,7 +24,7 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tituloEncontrarEspecialidade"
+        android:layout_below="@id/titleFindDoctor"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
