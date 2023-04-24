@@ -39,5 +39,8 @@ public class HomeActivity extends AppCompatActivity {
 
         CardView comprarMedicamento = findViewById(R.id.cardBuyMedicine);
         comprarMedicamento.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, BuyMedicineActivity.class)));
+
+        CardView artigosDeSaude = findViewById(R.id.cardHealthDoctor);
+        artigosDeSaude.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, HealthArticlesActivity.class)));
     }
 }
