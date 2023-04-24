@@ -11,29 +11,27 @@
         android:id="@+id/textViewOD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="OUTROS DETALHES"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listaViewOD"
-        android:layout_width="350dp"
-        android:layout_height="500dp"
+        android:layout_width="344dp"
+        android:layout_height="523dp"
         android:layout_margin="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewOD"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/textViewOD"
         app:layout_constraintTop_toBottomOf="@+id/textViewOD"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.167" />
 
     <Button
         android:id="@+id/botaoODVoltar"
@@ -46,8 +44,9 @@
         app:flow_verticalBias="0.69"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listaViewOD" />
+        app:layout_constraintTop_toBottomOf="@+id/listaViewOD"
+        app:layout_constraintVertical_bias="0.492" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

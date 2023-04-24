@@ -64,16 +64,16 @@ public class LabTestActivity extends AppCompatActivity {
         list = new ArrayList<>();
         for (String[] pacote : packages) {
             item = new HashMap<String, String>();
-            item.put("linha1", pacote[0]);
-            item.put("linha2", pacote[1]);
-            item.put("linha3", pacote[2]);
-            item.put("linha4", pacote[3]);
-            item.put("linha5", "Total: " + pacote[4] + " R$");
+            item.put("line1", pacote[0]);
+            item.put("line2", pacote[1]);
+            item.put("line3", pacote[2]);
+            item.put("line4", pacote[3]);
+            item.put("line5", "Total: " + pacote[4] + " R$");
             list.add(item);
 
         }
 
-        sa = new SimpleAdapter(this, list, R.layout.multi_lines, new String[]{"linha1", "linha2", "linha3", "linha4", "linha5"}, new int[]{R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
+        sa = new SimpleAdapter(this, list, R.layout.multi_lines, new String[]{"line1", "line2", "line3", "line4", "line5"}, new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
         listView.setAdapter(sa);
 
         listView.setOnItemClickListener((adapterView, view, i, l) -> {

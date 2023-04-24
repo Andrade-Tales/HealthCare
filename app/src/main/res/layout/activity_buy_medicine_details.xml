@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2"
+    tools:context=".BuyMedicineDetailsActivity">
+
+    <TextView
+        android:id="@+id/textViewBMDNomePacote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comprar medicamentos"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:flow_verticalBias="0.01999998"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <EditText
+        android:id="@+id/editTextBMDMultiline"
+        android:layout_width="390dp"
+        android:layout_height="450dp"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:editable="false"
+        android:inputType="textMultiLine"
+        android:gravity="start|top"
+        android:padding="10dp"
+        android:text="Hi \nHello"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBMDNomePacote"
+        app:layout_constraintVertical_bias="0.123" />
+
+    <Button
+        android:id="@+id/botaoBMDVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_bg"
+        android:text="VOLTAR"
+        app:backgroundTint="@color/teal_700"
+        app:flow_verticalBias="0.69"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBMDTotal"
+        app:layout_constraintVertical_bias="0.726" />
+
+    <Button
+        android:id="@+id/botaoBMDCarrinho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_bg"
+        android:text="Add"
+        app:backgroundTint="@color/teal_700"
+        app:flow_verticalBias="0.69"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBMDTotal"
+        app:layout_constraintVertical_bias="0.726" />
+
+    <TextView
+        android:id="@+id/textViewBMDTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Total: "
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBMDMultiline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

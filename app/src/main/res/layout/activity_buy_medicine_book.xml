@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".LabTestBookActivity">
+    tools:context=".BuyMedicineBookActivity">
+
 
     <TextView
-        android:id="@+id/textViewLTB"
+        android:id="@+id/textViewBMB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="624dp"
@@ -22,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextLTBContato"
+        android:id="@+id/editTextBMBContato"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -41,10 +42,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLTBPinCode" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBMBPinCode" />
 
     <EditText
-        android:id="@+id/editTextLTBNomeCompleto"
+        android:id="@+id/editTextBMBNomeCompleto"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="84dp"
@@ -63,10 +64,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLTB" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewBMB" />
 
     <EditText
-        android:id="@+id/editTextLTBEndereco"
+        android:id="@+id/editTextBMBEndereco"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -85,10 +86,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLTBNomeCompleto" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBMBNomeCompleto" />
 
     <EditText
-        android:id="@+id/editTextLTBPinCode"
+        android:id="@+id/editTextBMBPinCode"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
@@ -107,10 +108,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLTBEndereco" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBMBEndereco" />
 
     <Button
-        android:id="@+id/buttonLTBRegistrar"
+        android:id="@+id/buttonBMBRegistrar"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="64dp"
@@ -120,6 +121,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLTBContato" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBMBContato" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

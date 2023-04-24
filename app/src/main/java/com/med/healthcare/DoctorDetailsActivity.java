@@ -28,7 +28,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
     Button btn;
     String[][] dr_detalhes = {};
     HashMap<String, String> item;
-    ArrayList<HashMap<String, String>> lista;
+    ArrayList<HashMap<String, String>> list;
     SimpleAdapter sa;
 
     @Override
@@ -52,17 +52,17 @@ public class DoctorDetailsActivity extends AppCompatActivity {
 
         btn.setOnClickListener(v -> startActivity(new Intent(DoctorDetailsActivity.this, FindDoctorActivity.class)));
 
-        lista = new ArrayList<HashMap<String, String>>();
+        list = new ArrayList<HashMap<String, String>>();
         for (int i = 0; i < dr_detalhes.length; i++) {
             item = new HashMap<String, String>();
-            item.put("linha1", dr_detalhes[i][0]);
-            item.put("linha2", dr_detalhes[i][1]);
-            item.put("linha3", dr_detalhes[i][2]);
-            item.put("linha4", dr_detalhes[i][3]);
-            item.put("linha5", "Valor: " + dr_detalhes[i][4] + " R$");
-            lista.add(item);
+            item.put("line1", dr_detalhes[i][0]);
+            item.put("line2", dr_detalhes[i][1]);
+            item.put("line3", dr_detalhes[i][2]);
+            item.put("line4", dr_detalhes[i][3]);
+            item.put("line5", "Valor: " + dr_detalhes[i][4] + " R$");
+            list.add(item);
         }
-        sa = new SimpleAdapter(this, lista, R.layout.multi_lines, new String[]{"linha1", "linha2", "linha3", "linha4", "linha5"}, new int[]{R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
+        sa = new SimpleAdapter(this, list, R.layout.multi_lines, new String[]{"line1", "line2", "line3", "line4", "line5"}, new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
         ListView lst = findViewById(R.id.listaViewDD);
         lst.setAdapter(sa);
 

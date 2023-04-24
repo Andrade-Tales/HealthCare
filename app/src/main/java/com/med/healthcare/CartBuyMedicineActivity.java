@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class CartLabActivity extends AppCompatActivity {
+public class CartBuyMedicineActivity extends AppCompatActivity {
 
     HashMap<String, String> item;
     ArrayList<HashMap<String, String>> list;
@@ -33,14 +33,14 @@ public class CartLabActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart_lab);
+        setContentView(R.layout.activity_cart_buy_medicine);
 
-        dateButton = findViewById(R.id.buttonCLLivroData);
-        timeButton = findViewById(R.id.buttonCLLivroTime);
-        btnCheckout = findViewById(R.id.buttonCLLivroCheckout);
-        btnBack = findViewById(R.id.buttonCLLivroVoltar);
-        tvTotal = findViewById(R.id.textViewCLTotal);
-        lst = findViewById(R.id.listaViewCL);
+        dateButton = findViewById(R.id.buttonBMLivroData);
+        timeButton = findViewById(R.id.buttonBMLivroTime);
+        btnCheckout = findViewById(R.id.buttonBMLivroCheckout);
+        btnBack = findViewById(R.id.buttonBMLivroVoltar);
+        tvTotal = findViewById(R.id.textViewBMTotal);
+        lst = findViewById(R.id.listaViewBM);
 
         SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "").toString();
@@ -48,7 +48,7 @@ public class CartLabActivity extends AppCompatActivity {
         Database db = new Database(getApplicationContext(), "healthcare", null, 1);
 
         float totalAmount = 0;
-        ArrayList dbData = db.getCartData(username, "lab");
+        ArrayList dbData = db.getCartData(username, "medicine");
         //Toast.makeText(getApplicationContext(), "" + dbData, Toast.LENGTH_LONG).show();
 
         packages = new String[dbData.size()][];
@@ -80,10 +80,10 @@ public class CartLabActivity extends AppCompatActivity {
         sa = new SimpleAdapter(this, list, R.layout.multi_lines, new String[]{"line1", "line2", "line3", "line4", "line5"}, new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
         lst.setAdapter(sa);
 
-        btnBack.setOnClickListener(view -> startActivity(new Intent(CartLabActivity.this, LabTestActivity.class)));
+        btnBack.setOnClickListener(view -> startActivity(new Intent(CartBuyMedicineActivity.this, BuyMedicineActivity.class)));
 
         btnCheckout.setOnClickListener(view -> {
-            Intent it = new Intent(CartLabActivity.this, LabTestBookActivity.class);
+            Intent it = new Intent(CartBuyMedicineActivity.this, BuyMedicineBookActivity.class);
             it.putExtra("price", tvTotal.getText());
             it.putExtra("date", dateButton.getText());
             it.putExtra("time", timeButton.getText());
@@ -125,4 +125,5 @@ public class CartLabActivity extends AppCompatActivity {
         int style = AlertDialog.THEME_HOLO_DARK;
         timePickerDialog = new TimePickerDialog(this, style, timeSetListener, hrs, mins, true);
     }
+
 }

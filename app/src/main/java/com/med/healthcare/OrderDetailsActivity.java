@@ -54,20 +54,21 @@ public class OrderDetailsActivity extends AppCompatActivity {
             order_details[i][4] = strData[7];
         }
 
-        list = new ArrayList<>();
-        for (int i = 0; i < order_details.length; i++) {
-            item = new HashMap<String, String>();
-            item.put("linha1", order_details[i][0]);
-            item.put("linha2", order_details[i][1]);
-            item.put("linha3", order_details[i][2]);
-            item.put("linha4", order_details[i][3]);
-            item.put("linha5", order_details[i][4]);
-            list.add(item);
-        }
+            list = new ArrayList<>();
+            for (int i = 0; i < order_details.length; i++) {
+                item = new HashMap<String, String>();
+                item.put("line1", order_details[i][0]);
+                item.put("line2", order_details[i][1]);
+                item.put("line3", order_details[i][2]);
+                item.put("line4", order_details[i][3]);
+                item.put("line5", order_details[i][4]);
+                list.add(item);
+            }
 
-        sa = new SimpleAdapter(this, list, R.layout.multi_lines, new String[]
-                {"linha1", "linha2", "linha3", "linha4", "linha5"},
-                new int[] {R.id.linha_a, R.id.linha_b, R.id.linha_c, R.id.linha_d, R.id.linha_e});
-        lst.setAdapter(sa);
+            sa = new SimpleAdapter(this, list, R.layout.multi_lines, new String[]
+                    {"line1", "line2", "line3", "line4", "line5"},
+                    new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
+            lst.setAdapter(sa);
+
     }
 }
