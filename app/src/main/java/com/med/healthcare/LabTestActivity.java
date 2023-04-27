@@ -15,11 +15,11 @@ public class LabTestActivity extends AppCompatActivity {
 
     private final String[][] packages =
             {
-                    {"Pacote 1 : Check-up completo", "", "", "", "999"},
-                    {"Pacote 2 : Teste de glicemia", "", "", "", "299"},
-                    {"Pacote 3 : Teste de covid-19", "", "", "", "899"},
-                    {"Pacote 4 : Teste de tireoide", "", "", "", "499"},
-                    {"Pacote 5 : Teste de imunidade", "", "", "", "699"}
+                    {"Pacote 1 : Check-up completo", "", "", "", "150"},
+                    {"Pacote 2 : Teste de glicemia", "", "", "", "60"},
+                    {"Pacote 3 : Teste de covid-19", "", "", "", "25"},
+                    {"Pacote 4 : Teste de tireoide", "", "", "", "55"},
+                    {"Pacote 5 : Teste de imunidade", "", "", "", "35"}
             };
 
     private final String[] details_packages = {
@@ -68,7 +68,7 @@ public class LabTestActivity extends AppCompatActivity {
             item.put("line2", pacote[1]);
             item.put("line3", pacote[2]);
             item.put("line4", pacote[3]);
-            item.put("line5", "Total: " + pacote[4] + " R$");
+            item.put("line5", "Valor: " + pacote[4] + " R$");
             list.add(item);
 
         }

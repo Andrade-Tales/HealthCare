@@ -18,9 +18,9 @@ public class BuyMedicineActivity extends AppCompatActivity {
     private String[][] packages =
             {
                     {"Cápsula Uprise-D3 100UI", "", "", "", "50"},
-                    {"HealthVit Chromium Picolinate 200mcg Capsule", "", "", "", "305"},
-                    {"Cápsulas do complexo de vitamina B", "", "", "", "448"},
-                    {"Inlife Vitamin E Wheat Germ Oil Capsule", "", "", "", "539"},
+                    {"HealthVit Chromium Picolinate 200mcg Cápsula", "", "", "", "45"},
+                    {"Cápsulas do complexo de vitamina B", "", "", "", "65"},
+                    {"Inlife Vitamina E Cápsula de óleo de trigo", "", "", "", "90"},
                     {"Dolo 650 Tablet", "", "", "", "30"},
                     {"Crocin 650 Advance Tablet", "", "", "", "50"},
                     {"Pastilhas medicamentosas Strepsils para dor de garganta", "", "", "", "40"},
@@ -78,7 +78,7 @@ public class BuyMedicineActivity extends AppCompatActivity {
             item.put("line2", packages[i][1]);
             item.put("line3", packages[i][2]);
             item.put("line4", packages[i][3]);
-            item.put("line5", "Total:" + packages[i][4] + "R$");
+            item.put("line5", "Valor: " + packages[i][4] + " R$");
             list.add(item);
         }
 

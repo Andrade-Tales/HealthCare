@@ -46,11 +46,11 @@ public class OrderDetailsActivity extends AppCompatActivity {
             order_details[i][0] = strData[0];
             order_details[i][1] = strData[1]; // +" " + strData[3];
             if (strData[7].compareTo("medicine") == 0) {
-                order_details[i][3] = "Del:" + strData[4];
+                order_details[i][3] = "Data: " + strData[4];
             } else {
-                order_details[i][3] = "Del:" + strData[4] + " " + strData[5];
+                order_details[i][3] = "Data: " + strData[4] + " Hora: " + strData[5];
             }
-            order_details[i][2] = "Rs." + strData[6];
+            order_details[i][2] = strData[6] + " R$" ;
             order_details[i][4] = strData[7];
         }
 
