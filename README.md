@@ -9,4 +9,4 @@
 7. Detalhes do pedido: informações do pedido.
 8. Sair.
 
-**Em Desenvolvimento!**
+
