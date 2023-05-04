@@ -1,7 +1,7 @@
 <h1 align="center"> Assistência médica </h1>
 
 1. Entrar.
-2. Registro.
+2. Cadastro.
 3. Teste de laboratório: mostra vários detalhes do pacote, adiciona ao carrinho, faz o pedido.
 4. Medicamento: mostra a lista de medicamentos, adiciona ao carrinho, faz o pedido.
 5. Encontre um médico: procure um médico especialista, marque uma consulta.
