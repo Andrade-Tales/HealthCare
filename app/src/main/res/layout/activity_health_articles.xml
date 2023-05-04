@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="660dp"
-        android:text="Artigos de saúde"
+        android:text="Artigo de saúde"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"

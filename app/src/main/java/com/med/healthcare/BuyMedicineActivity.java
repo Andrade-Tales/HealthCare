@@ -18,12 +18,12 @@ public class BuyMedicineActivity extends AppCompatActivity {
     private String[][] packages =
             {
                     {"Cápsula Uprise-D3 100UI", "", "", "", "50"},
-                    {"HealthVit Chromium Picolinate 200mcg Cápsula", "", "", "", "45"},
-                    {"Cápsulas do complexo de vitamina B", "", "", "", "65"},
-                    {"Inlife Vitamina E Cápsula de óleo de trigo", "", "", "", "90"},
+                    {"HealthVit 200mcg Cápsula", "", "", "", "45"},
+                    {"Cápsulas vitamina B", "", "", "", "65"},
+                    {"Inlife Vitamina E", "", "", "", "90"},
                     {"Dolo 650 Tablet", "", "", "", "30"},
                     {"Crocin 650 Advance Tablet", "", "", "", "50"},
-                    {"Pastilhas medicamentosas Strepsils para dor de garganta", "", "", "", "40"},
+                    {"Pastilhas Strepsils para garganta", "", "", "", "40"},
                     {"Tata 1mg Cálcio + Vitamina D3", "", "", "", "30"},
                     {"Feronia - XT Tablet", "", "", "", "130"},
             };

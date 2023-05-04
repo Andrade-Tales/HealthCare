@@ -18,11 +18,11 @@ public class HealthArticlesActivity extends AppCompatActivity {
     private String[][] health_details =
 
             {
-                    {"Caminhada Diária", "", "", "", "Clique em Mais Detalhes"},
-                    {"Cuidados domiciliares de COVID-19", "", "", "", "Clique em Mais Detalhes"},
-                    {"Pare de fumar", "", "", "", "Clique em mais detalhes"},
-                    {"Cólicas Menstruais", "", "", "", "Clique em Mais Detalhes"},
-                    {"Intestino Saudável", "", "", "", "Clique em Mais Detalhes"}
+                    {"Caminhada Diária", "", "", "", "Clique para mais detalhes"},
+                    {"Cuidados COVID-19", "", "", "", "Clique para mais detalhes"},
+                    {"Pare de fumar", "", "", "", "Clique para mais detalhes"},
+                    {"Cólicas Menstruais", "", "", "", "Clique para mais detalhes"},
+                    {"Intestino Saudável", "", "", "", "Clique para mais detalhes"}
             };
 
     private int[] images = {

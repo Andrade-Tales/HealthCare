@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back1"
+    android:background="@drawable/background"
     android:fillViewport="true"
     tools:context="com.med.healthcare.LoginActivity">
 
@@ -96,6 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:textSize="20sp"
         android:text="Cadastre-se"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
